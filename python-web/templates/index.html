@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Proudly presented by ECharts</title>
+    {% for jsfile_name in script_list %}
+    <script src="../static/{{ jsfile_name }}.js"></script>
+    {% endfor %}
+</head>
+
+<body style="margin: auto">
+<div style="margin: auto;width: 70%">
+    <div>
+        <h3>分析中国分省离婚年均增长率与抚养比、住房价格年均增长率的关系</h3>
+        <div>数据：中国分省近5年的离婚登记数、抚养比、住房的平均价格</div>
+        <div>数据来源：国家数据网</div>
+    </div>
+
+    <form action="/" style="float: left">
+        <button type="submit">增长率对比</button>
+    </form>
+
+    <form action="/map" style="float: left;margin-left: 10px">
+        <button type="submit">离婚增长率</button>
+    </form>
+    <form action="/map1" style="float: left;margin-left: 10px">
+        <button type="submit">2014-2018抚养比</button>
+    </form>
+
+    <form action="/divorce" style="margin-left: 20px">
+        <span style="margin-left: 10px">请选择查看各年份中国分省离婚登记数</span>
+        <select name="city">
+            <option value="2014">2014年</option>
+            <option value="2015">2015年</option>
+            <option value="2016">2016年</option>
+            <option value="2017">2017年</option>
+            <option value="2018">2018年</option>
+        </select>
+        <button>Do it!</button>
+    </form>
+    {{ myechart|safe }}
+    <div style="size: 50px"><b>{% if text %}
+        分析
+        {% endif %}</b></div>
+    <div style="float: left;width: 70%">
+        <p style="text-indent:2em">{{ text }}</p>
+    </div>
+    <div style="size: 50px;clear: both"><b>{% if text1 %}
+        发现与结论
+        {% endif %}</b></div>
+    <div style="float: left;width: 70%">
+        <p style="text-indent:2em">{{ text1 }}</p>
+    </div>
+    {% if data %}
+    <table border="1" style="clear: both">
+        <tr>
+            <td colspan="3" style="text-align: center"> 中国分省离婚登记数</td>
+        </tr>
+        <tr>
+            {% for i in col %}
+            <td style="width: 50px;text-align: center">{{ i }}</td>
+            {% endfor %}
+        </tr>
+        {% for foo in data %}
+        <tr>
+            {% for i in foo %}
+            <td style="width: 50px;text-align: center">{{ i }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+
+    </table>
+    {% endif %}
+</div>
+</body>
+
+</html>
