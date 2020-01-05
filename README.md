@@ -24,7 +24,7 @@
 
 ### :heavy_check_mark:**数据传递描述**：  
 
-#### HTML档描述：
+#### 一、HTML档描述：
 
 1.**布局**：首先用margin:auto让标题和数据来源等水平居中。用style="float: left"让图像向左浮动，图表大小width: 70%。  
 
@@ -38,8 +38,8 @@
 4.**html与python档的交互**：利用{% if data %}和{% for i in col %}两个if语句用for循环选择app.py里最后一个函数的变量cols里面的省份，年份，dir。
 
 
-5.**条件判断**：为了在图表下面加分析和结论，使用{% if %}标签，在app.py中每个函数中新建一个变量text1，然后在index.html中使用{% if %}标签进行判断。使得在每个图表的显示中都能显示出相应结论。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   
-#### python档描述：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;1.**主要运用的模块**：pandas、flask、pyecharts、numpy  
+5.**条件判断**：为了在图表下面加分析和结论，使用{% if %}标签，在app.py中每个函数中新建一个变量text1，然后在index.html中使用{% if %}标签进行判断。使得在每个图表的显示中都能显示出相应结论。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;
+二、python档描述：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;1.**主要运用的模块**：pandas、flask、pyecharts、numpy  
 2.**具体操作**：
 
 
@@ -49,7 +49,7 @@
 然后用@app.route(路由规则) 的方式绑定可视化视图函数, route() 会告诉告诉 Flask 什么样的URL 能触发我们的函数，就像项目里的@app.route('/map')一样，接着将17级提供的图表函数放入py文件中。
 
 
-最后return render_template会根据后面传入的参数，对html进行修改渲染。例如第一个图表：离婚年均增长率，用render_embed()将定义c的图表存储在图表容器myechart中，利用jinjia2语法的动态数据绑定将图表数据还有text1标签的内容一并对html进行渲染返回到前端页面。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;webapp动作描述：
+最后return render_template会根据后面传入的参数，对html进行修改渲染。例如第一个图表：离婚年均增长率，用render_embed()将定义c的图表存储在图表容器myechart中，利用jinjia2语法的动态数据绑定将图表数据还有text1标签的内容一并对html进行渲染返回到前端页面。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;三、webapp动作描述：
 
 
 1.**提交按钮**：项目启动后显示的主页面有三个提交按钮，分别对应的是中国分省离婚增长率与商品住宅房价格增长情况/离婚增长率/2014-2018抚养比这三个图表。通过点击可以跳转到相应的图表，并显示出相应的故事结论。
