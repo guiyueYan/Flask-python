@@ -35,10 +35,10 @@
 3.**html与python文档的交互体现**：在html页面设置一个空的图表容器{{ mychart|safe }}，通过后端py文件进行对应可视化函数传输数据给其中三个图表一个提交按钮<button type="submit">，提交时图表数据会提交到名为 "/" 的页面，也就是增长率对比图这个页面，map/map1/divorce的页面也是这种方法体现。最后一个各省份的图表通过select 元素创建多选下拉框（选择2014-2018年）。使用<select name="city"><option value="2014-2018年">用于对提交的表格数据进行识别表格中有关各省市的数据，最后前端页面只显示此年份的各省市有关数据。
 
 
-4.**html与python档的交互**：利用{% if data %}和{% for i in col %}两个if语句用for循环选择app.py里最后一个函数的变量cols里面的省份，年份，dir。
+4.**数据的循环/嵌套**：利用{% if data %}和{% for i in col %}两个if语句用for循环选择app.py里最后一个函数的变量cols里面的省份，年份，dir。
 
 
-5.**条件判断**：为了在图表下面加分析和结论，使用{% if %}标签，在app.py中每个函数中新建一个变量text1，然后在index.html中使用{% if %}标签进行判断。使得在每个图表的显示中都能显示出相应结论。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;
+5.**条件判断**：为了在图表下面加分析和结论，使用{% if %}标签，在app.py中每个函数中新建一个变量text1，然后在index.html中使用{% if %}标签进行判断。使得在每个图表的显示中都能显示出相应结论。&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;
 二、python档描述：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;1.**主要运用的模块**：pandas、flask、pyecharts、numpy  
 2.**具体操作**：
 
