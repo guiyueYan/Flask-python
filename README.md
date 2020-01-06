@@ -9,7 +9,7 @@
 * 学号：181013128  
 
 ### :link:**python项目查看**：
-* [项目代码详情GitHub_URL](https://github.com/guiyueYan/python-flask/tree/master/python-web)
+* [项目代码详情GitHub_URL](https://github.com/guiyueYan/Flask-python/tree/master/python-web)
 * [pythonanywhere个人部署URL](http://yuiane.pythonanywhere.com/)  
 
 ### :thought_balloon:项目主要URL及功能如下：  
@@ -32,7 +32,7 @@
 2.**图表**：用table标签里的border="1"，让表格外边框和每个单元格都有了实线，让数据更易观看。colspan=3为了让中国分省离婚登记数通过选择年份后的3行单元格（省份，年份，dir）合并成一行。由于表格是显示在图表之下，利用clear:both可以消除上面与他同级的加了float:left 的div元素对布局产生的影响，页面布局就不会太乱。  
 
 
-3.**html与python文档的交互体现**：在html页面设置一个空的图表容器{{ mychart|safe }}，通过后端py文件进行对应可视化函数传输数据给其中三个图表一个提交按钮<button type="submit">，提交时图表数据会提交到名为 "/" 的页面，也就是增长率对比图这个页面，map/map1/divorce的页面也是这种方法体现。最后一个各省份的图表通过select 元素创建多选下拉框（选择2014-2018年）。使用<select name="city"><option value="2014-2018年">用于对提交的表格数据进行识别表格中有关各省市的数据，最后前端页面只显示此年份的各省市有关数据。
+3.**html与python文档的交互体现**：在html页面设置一个空的图表容器{{ mychart|safe }}，通过后端py文件进行对应可视化函数传输数据给其中三个图表一个提交按钮<button type="submit">，提交时图表数据会提交到名为 "/" 的页面，也就是增长率对比图这个页面，map/map1/divorce的页面也是这种方法体现。最后一个各省份的图表通过select 元素创建多选下拉框（选择2014-2018年）。使用<select name="city"><option value="2014-2018年">用于对提交的表格数据进行识别表格中有关各省市的数据，最后前端页面只显示此年份的各省市有关数据。 
 
 
 4.**数据的循环/嵌套**：利用{% if data %}和{% for i in col %}两个if语句用for循环选择app.py里最后一个函数的变量cols里面的省份，年份，dir。
